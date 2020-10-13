@@ -6,6 +6,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 `npm install --save bootstrap`
 
+`npm install --save jquery`
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:8600/`. The app will automatically reload if you change any of the source files.
