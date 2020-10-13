@@ -7,14 +7,14 @@
 <div class="row">
 	<div class="col">
 		<div class="list-group">
-			<a class="list-group-item rcp" href="#">
+			<a *ngFor="let rcp of recipes" class="list-group-item rcp" href="#">
 				<div class="row">
 					<div class="col">
-						<strong>Beans on toast</strong>
-						<p class="pt-2 pb-0">Proper student grub</p>
+						<strong>{{ rcp.name }}</strong>
+						<p class="pt-2 pb-0">{{ rcp.description }}</p>
 					</div>
 					<div class="col-4">
-						<img class="img-fluid" src="https://aucdn.ar-cdn.com/recipes/port320/ed970612-f30b-414a-a93a-322ba214e7c1.jpg" />
+						<img class="img-fluid" [src]="rcp.imagePath" [alt]="rcp.name" [title]="rcp.name" />
 					</div>
 				</div>
 			</a>
