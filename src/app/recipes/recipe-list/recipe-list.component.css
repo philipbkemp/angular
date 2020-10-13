@@ -1,0 +1,7 @@
+a.rcp {
+	color: #1A1A1A !important;
+	text-decoration: none;
+}
+a.rcp:hover {
+	background-color: rgb(26,26,26,0.1);
+}
