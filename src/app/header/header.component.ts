@@ -6,7 +6,7 @@ import { Component,EventEmitter, Output } from "@angular/core";
 })
 export class HeaderComponent {
 	
-	@Output modeSelected = new EventEmitter<string>();
+	@Output() modeSelected = new EventEmitter<string>();
 
 	onSelect(mode:string) {
 		this.modeSelected.emit(mode);
