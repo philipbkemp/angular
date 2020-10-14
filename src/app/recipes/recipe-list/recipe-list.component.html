@@ -3,11 +3,15 @@
 		<button class="btn btn-success">New recipe</button>
 	</div>
 </div>
-
+<hr />
 <div class="row">
 	<div class="col">
 		<div class="list-group">
-			<app-recipe-item *ngFor="let rcp of recipes" [rcp]="rcp"></app-recipe-item>
+			<app-recipe-item
+				*ngFor="let rcp of recipes"
+				[rcp]="rcp"
+				(recipeSelected)="recipeSelected(rcp)"
+				></app-recipe-item>
 		</div>
 	</div>
 </div>

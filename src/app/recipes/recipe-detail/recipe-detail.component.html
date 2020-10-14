@@ -1,15 +1,5 @@
-<div class="row">
-	<div class="col">
-		<img src="" alt="" title="" class="img-fluid" />
-	</div>
-</div>
-<div class="row">
-	<div class="col">
-		<h1>rcp.name</h1>
-	</div>
-</div>
-<div class="row">
-	<div class="col">
+<div class="row mb-2">
+	<div class="col text-right">
 		<div class="btn-group">
 			<button type="button" class="btn btn-primary dropdown-toggle">Manage <span class="caret"></span></button>
 			<ul class="dropdown-menu">
@@ -20,9 +10,14 @@
 		</div>
 	</div>
 </div>
-<div class="row">
+<hr />
+<div class="row mb-2">
 	<div class="col">
-		<p>rcp.description</p>
+		<h1>{{ rcp.name }}</h1>
+		<p>{{ rcp.description }}</p>
+	</div>
+	<div class="col-3 text-right">
+		<img [src]="rcp.imagePath" [alt]="rcp.name" [title]="rcp.name" class="img-fluid rcpThumb" />
 	</div>
 </div>
 <div class="row">
