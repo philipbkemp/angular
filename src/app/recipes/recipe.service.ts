@@ -1,3 +1,5 @@
+import { EventEmitter } from "@angular/core";
+
 import { Recipe } from "./recipe.model";
 
 export class RecipeService {
@@ -7,6 +9,8 @@ export class RecipeService {
 		new Recipe("Carbonara","Hearty pasta","https://images.immediate.co.uk/production/volatile/sites/30/2020/08/recipe-image-legacy-id-1001491_11-2e0fa5c.jpg"),
 		new Recipe("Egg fried rice","Eggs, Rice, Fried","https://i0.wp.com/seonkyounglongest.com/wp-content/uploads/2020/02/Egg-Fried-Rice-2.jpg?fit=1300%2C867&ssl=1")
 	];
+
+	recipeSelected = new EventEmitter<Recipe>();
 
 	getRecipes() {
 		return this.recipes.slice();
