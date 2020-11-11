@@ -1,7 +1,14 @@
 ::ng-deep a.nav-link {
     border-bottom: 3px solid transparent;
 }
-
 ::ng-deep a.nav-link.active {
     border-bottom: 3px solid #28a745;
+}
+
+::ng-deep a.list-group-item.active {
+    background-color: #d4edda;
+    border-color: #28a745;
+}
+::ng-deep a.list-group-item.active:hover {
+	background-color: #a9dcb5 !important;
 }
