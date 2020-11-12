@@ -7,10 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-	loadedMode = "rcp";
-
-	onNavigate(mode:string) {
-		this.loadedMode = mode;
-	}
-
 }
