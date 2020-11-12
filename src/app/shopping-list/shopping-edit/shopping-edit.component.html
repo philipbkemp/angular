@@ -1,23 +1,23 @@
 <div class="row">
 	<div class="col">
-		<form>
+		<form (ngSubmit)="onAddItem(f)" #f="ngForm">
 			<div class="row">
 				<div class="col-6 form-group">
 					<label for="name">Name:</label>
-					<input type="text" id="name" class="form-control" #nameInput />
+					<input type="text" id="name" class="form-control" name="name" ngModel />
 				</div>
 				<div class="col-3 form-group">
 					<label for="qty">Qty:</label>
-					<input type="number" id="qty" class="form-control" #qtyInput />
+					<input type="number" id="qty" class="form-control" name="qty" ngModel />
 				</div>
 				<div class="col-3 form-group">
 					<label for="unit">Unit:</label>
-					<input type="text" id="unit" class="form-control" #unitInput />
+					<input type="text" id="unit" class="form-control" name="unit" ngModel />
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-2 offset-6">
-					<button class="btn w-100 btn-success" type="submit" (click)="onAddItem()">Add</button>
+					<button class="btn w-100 btn-success" type="submit">Add</button>
 				</div>
 				<div class="col-2">
 					<button class="btn w-100 btn-danger" type="button">Delete</button>
