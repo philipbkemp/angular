@@ -1,1 +1,62 @@
-<p>recipe-edit works!</p>
+<form #f="ngForm">
+	<div class="row mb-2">
+		<div class="col-2 offset-8">
+			<button class="btn w-100 btn-success" type="submit" [disabled]="! f.valid">
+				Save
+			</button>
+		</div>
+		<div class="col-2">
+			<button class="btn w-100 btn-outline-primary" type="submit">
+				Cancel
+			</button>
+		</div>
+	</div>
+	<hr />
+	<div class="row mb-2">
+		<div class="col">
+
+			<div class="form-group">
+				<label for="name">Name</label>
+				<input type="text" id="name" name="name" class="form-control" />
+			</div>
+
+		</div>
+	</div>
+	<div class="row mb-2">
+		<div class="col">
+
+			<div class="form-group">
+				<label for="name">Description</label>
+				<textarea id="description" name="description" class="form-control" rows="4"></textarea>
+			</div>
+
+		</div>
+	</div>
+	<div class="row mb-2">
+		<div class="col">
+
+			<div class="form-group">
+				<label for="name">Image URL</label>
+				<input type="text" id="imagePath" name="imagePath" class="form-control" />
+			</div>
+
+		</div>
+	</div>
+	<div class="row mb-2">
+		<div class="col-4 offset-4">
+			<img src="" class="img-fluid" />
+		</div>
+	</div>
+
+	<div class="row mb-2">
+		<div class="col">
+			<label>Ingredients</label>
+			<ul class="list-group">
+				<li class="list-group-item">
+					NAME / QTY / UNIT
+				</li>
+			</ul>
+		</div>
+	</div>
+
+</form>
