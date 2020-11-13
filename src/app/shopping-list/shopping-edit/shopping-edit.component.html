@@ -4,20 +4,48 @@
 			<div class="row">
 				<div class="col-6 form-group">
 					<label for="name">Name:</label>
-					<input type="text" id="name" class="form-control" name="name" ngModel />
+
+					<input
+						type="text"
+						id="name"
+						class="form-control"
+						name="name"
+						ngModel
+						required
+						/>
+
 				</div>
 				<div class="col-3 form-group">
 					<label for="qty">Qty:</label>
-					<input type="number" id="qty" class="form-control" name="qty" ngModel />
+
+					<input
+						type="number"
+						id="qty"
+						class="form-control"
+						name="qty"
+						min="0"
+						ngModel
+						required
+						pattern="^[0-9]+(\.[0-9][0-9]?)?$"
+						/>
+						
 				</div>
 				<div class="col-3 form-group">
 					<label for="unit">Unit:</label>
-					<input type="text" id="unit" class="form-control" name="unit" ngModel />
+
+					<input
+						type="text"
+						id="unit"
+						class="form-control"
+						name="unit"
+						ngModel
+						/>
+
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-2 offset-6">
-					<button class="btn w-100 btn-success" type="submit">Add</button>
+					<button class="btn w-100 btn-success" type="submit" [disabled]="! f.valid">Add</button>
 				</div>
 				<div class="col-2">
 					<button class="btn w-100 btn-danger" type="button">Delete</button>
