@@ -1,0 +1,7 @@
+.ingredient-list-item {
+	cursor: pointer;
+}
+
+.ingredient-list-item:hover {
+	background-color: #EEEEEE;
+}
