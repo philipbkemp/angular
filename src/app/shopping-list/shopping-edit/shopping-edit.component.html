@@ -49,7 +49,7 @@
 					</button>
 				</div>
 				<div class="col-2">
-					<button class="btn w-100 btn-danger" type="button">
+					<button class="btn w-100 btn-danger" type="button" (click)="doDelete()" [disabled]="! isEditing">
 						Delete
 					</button>
 				</div>
