@@ -3,9 +3,9 @@
 		<app-shopping-edit></app-shopping-edit>
 		<hr />
 		<div class="list-group">
-			<div class="list-group-item" *ngFor="let ing of ingredients">
+			<div class="list-group-item" *ngFor="let ing of ingredients" (click)="onEditItem()">
 				<strong>{{ ing.name }}</strong>
-				-
+				<span *ngIf="ing.qty !== '' || ing.unit !== ''" >-</span>
 				{{ ing.qty }}
 				<span *ngIf="ing.unit !== ''">
 					{{ ing.unit }}
