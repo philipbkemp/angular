@@ -44,7 +44,9 @@
 			</div>
 			<div class="row">
 				<div class="col-2 offset-6">
-					<button class="btn w-100 btn-success" type="submit" [disabled]="! f.valid">Add</button>
+					<button class="btn w-100 btn-success" type="submit" [disabled]="! f.valid">
+						{{ !isEditing ? 'Add' : 'Update' }}
+					</button>
 				</div>
 				<div class="col-2">
 					<button class="btn w-100 btn-danger" type="button">Delete</button>

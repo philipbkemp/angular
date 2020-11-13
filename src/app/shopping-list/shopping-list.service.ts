@@ -30,4 +30,9 @@ export class ShoppingListService {
 		this.update.next(this.getIngredients());
 	}
 
+	updateIngredient(index: number, newIng: Ingredient) {
+		this.ingredients[index] = newIng;
+		this.update.next(this.getIngredients());
+	}
+
 }
