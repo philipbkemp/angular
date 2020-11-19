@@ -3,6 +3,7 @@ import { FormArray, FormControl, FormGroup, Validators } from "@angular/forms";
 import { ActivatedRoute, Params } from "@angular/router";
 
 import { RecipeService } from "../recipe.service";
+import { Recipe } from "../recipe.model";
 
 @Component({
 	selector: 'app-recipe-edit',
@@ -64,13 +65,19 @@ export class RecipeEditComponent implements OnInit {
 	}
 
 	onSubmit() {
-		console.log(this.recipeForm);
+		
+		if ( this.editMode ) {
+			this.rcpService.updateRecipe(this.id,this.recipeForm.value);
+		} else {
+			this.rcpService.addRecipe(this.recipeForm.value);
+		}
+
 	}
 
 	onAddIngredient() {
 		(<FormArray> this.recipeForm.get("ingredients")).push(
 			new FormGroup({
-				"name": new FormControl( null, Validaotrs.required ),
+				"name": new FormControl( null, Validators.required ),
 				"qty": new FormControl( null, Validators.pattern(/^[0-9]+(\.[0-9][0-9]?)?$/) ),
 				"unit": new FormControl( null )
 			})

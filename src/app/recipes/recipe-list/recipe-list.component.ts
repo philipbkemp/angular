@@ -1,4 +1,4 @@
-import { Component, OnInit, } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from "@angular/router";
 
 import { Recipe } from "../recipe.model";
@@ -20,6 +20,11 @@ export class RecipeListComponent implements OnInit {
 	) {}
 
 	ngOnInit() {
+		this.rcpService.recipesChanged.subscribe(
+			(rcps: Recipe[]) => {
+				this.recipes = rcps;
+			}
+		);
 		this.recipes = this.rcpService.getRecipes();
 	}
 
