@@ -50,13 +50,30 @@
 
 	<div class="row mb-2">
 		<div class="col">
+
 			<label>Ingredients</label>
-			<ul class="list-group">
-				<!--- use *ngFor="let ingredientCtrl of controls; let i = index" --->
-				<li class="list-group-item">
-					NAME / QTY / UNIT
+			<ul class="list-group" formArrayName="ingredients">
+				<li
+					class="list-group-item"
+					*ngFor="let ingredientCtrl of recipeForm.get('ingredients').controls; let i = index"
+					[formGroupName]="i">
+					<div class="row">
+						<div class="col">
+							<input type="text" class="form-control" formControlName="name" />
+						</div>
+						<div class="col-2">
+							<input type="number" class="form-control" formControlName="qty" min="0" pattern="^[0-9]+(\.[0-9][0-9]?)?$" />
+						</div>
+						<div class="col-3">
+							<input type="text" class="form-control" formControlName="unit" />
+						</div>
+						<div class="col-2">
+							<button action="button" class="btn btn-danger">Delete</button>
+						</div>
+					</div>
 				</li>
 			</ul>
+			
 		</div>
 	</div>
 

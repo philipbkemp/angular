@@ -35,27 +35,36 @@ export class RecipeEditComponent implements OnInit {
 		let rcpName = "";
 		let imagePath = "";
 		let description = "";
+		let ingredients = new FormArray([]);
 
 		if ( this.editMode ) {
 			const rcp = this.rcpService.getRecipeById(this.id);
 			rcpName = rcp.name;
 			imagePath = rcp.imagePath;
 			description = rcp.description;
+			if ( rcp["ingredients"] ) {
+				for ( let i of rcp.ingredients ) {
+					ingredients.push(
+						new FormGroup({
+							"name": new FormControl(i.name),
+							"qty": new FormControl(i.qty),
+							"unit": new FormControl(i.unit)
+						})
+					);
+				}
+			}
 		}
 
 		this.recipeForm = new FormGroup({
 			"name": new FormControl(rcpName),
 			"imagePath": new FormControl(imagePath),
-			"description": new FormControl(description)
+			"description": new FormControl(description),
+			"ingredients": ingredients
 		});
 	}
 
 	onSubmit() {
 		console.log(this.recipeForm);
-	}
-
-	get control() {
-		return (<FormArray>this.recipeForm.get("ingredients")).controls;
 	}
 
 }
