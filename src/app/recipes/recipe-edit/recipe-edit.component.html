@@ -68,12 +68,19 @@
 							<input type="text" class="form-control" formControlName="unit" />
 						</div>
 						<div class="col-2">
-							<button action="button" class="btn btn-danger">Delete</button>
+							<button action="button" class="btn btn-danger w-100">Delete</button>
 						</div>
 					</div>
 				</li>
+				<li class="list-group-item">
+					<div class="row">
+						<div class="col-4 offset-8">
+							<button type="button" class="btn btn-success w-100" (click)="onAddIngredient()">Add new ingredient</button>
+						</div>
+					</div>					
+				</li>
 			</ul>
-			
+
 		</div>
 	</div>
 
