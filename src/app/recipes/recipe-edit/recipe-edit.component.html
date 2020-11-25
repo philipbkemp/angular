@@ -37,14 +37,21 @@
 
 			<div class="form-group">
 				<label for="name">Image URL</label>
-				<input type="text" id="imagePath" name="imagePath" class="form-control" formControlName="imagePath" />
+				<input
+					type="text"
+					id="imagePath"
+					name="imagePath"
+					class="form-control"
+					formControlName="imagePath"
+					#imagePath
+					/>
 			</div>
 
 		</div>
 	</div>
 	<div class="row mb-2">
 		<div class="col-4 offset-4">
-			<img src="" class="img-fluid" />
+			<img [src]="imagePath.value" class="img-fluid" />
 		</div>
 	</div>
 
