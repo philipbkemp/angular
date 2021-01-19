@@ -12,7 +12,7 @@ export class RecipeService {
 
 	recipesChanged = new Subject<Recipe[]>();
 
-	private recipes: Recipe[] = []/*
+	private recipes: Recipe[] = [];/*[
 		new Recipe(
 			"Beans on toast","Proper student grub","https://aucdn.ar-cdn.com/recipes/port320/ed970612-f30b-414a-a93a-322ba214e7c1.jpg",
 			[

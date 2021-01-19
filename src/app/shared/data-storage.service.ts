@@ -31,14 +31,14 @@ export class DataStorageService {
 		return this.http.get<Recipe[]>(
 			"https://ng-course-recipe-book-4f2f8-default-rtdb.europe-west1.firebasedatabase.app/recipes.json"
 		).pipe(
-			map(
-				recipes => {
-					console.log(recipes);
-					return recipes.map(
-						recipe =>{ return { ...recipe, ingredients: recipes.ingredients ? recipes.ingredients : [] } }
-					);
-				}
-			),
+			map(recipes => {
+				return recipes.map(rcp => {
+					return {
+						...rcp,
+						ingredients: rcp.ingredients ? rcp.ingredients : []
+					}
+				})
+			}),
 			tap(recipes => {
 				this.rcpService.setRecipes(recipes);
 			})
