@@ -46,6 +46,11 @@ export class RecipeService {
 		private slService: ShoppingListService
 	) {}
 
+	setRecipes(rcp:Recipe[]) {
+		this.recipes = rcp;
+		this.recipesChanged.next(this.getRecipes());
+	}
+
 	getRecipes() {
 		return this.recipes.slice();
 	}
