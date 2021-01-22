@@ -9,12 +9,20 @@
 				<label for="password">Password</label>
 				<input class="form-control" type="password" name="password" id="password" />
 			</div>
+			<div class="form-group" *ngIf="! modeLogin">
+				<label for="password2">Confirm Password</label>
+				<input class="form-control" type="password" name="password2" id="password2" />
+			</div>
 			<div class="row">
 				<div class="col-3">
-					<button class="w-100 btn btn-primary">Sign-up</button>
+					<button class="w-100 btn btn-primary" type="submit">
+						{{ modeLogin ? 'Login' : 'Sign-up' }}
+					</button>
 				</div>
-				<div class="col-3 offset-6">
-					<button class="w-100 btn btn-outline-primary">Switch to login</button>
+				<div class="col-3 offset-6" type="button">
+					<button class="w-100 btn btn-outline-primary" (click)="onSwitchMode()">
+						{{ modeLogin ? 'Create Account' : 'Already Registered?' }}
+					</button>
 				</div>
 			</div>
 		</form>
